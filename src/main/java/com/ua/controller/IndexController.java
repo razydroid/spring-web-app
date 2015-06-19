@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 	
-	@RequestMapping("/index")
+	@RequestMapping("/test")
 	public String index(){
-		return "WEB-INF/jsp/index.jsp";
+		return "index";
 	}
 
 }
