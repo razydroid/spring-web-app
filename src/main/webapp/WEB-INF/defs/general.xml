@@ -7,6 +7,9 @@
     <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
   </definition>
   
+  <definition name="signon" template="/WEB-INF/layout/signon.jsp">
+  </definition>
+  
   <definition name="index" extends="common">
     <put-attribute name="title" value="Spring web app" />
     <put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
@@ -32,6 +35,17 @@
   <definition name="customersPage" extends="common">
     <put-attribute name="title" value="Customers page" />
     <put-attribute name="body" value="/WEB-INF/jsp/customersPage.jsp" />
+  </definition>
+  
+  <definition name="login" extends="signon">
+    <put-attribute name="title" value="Sigin page" />
+    <put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+    <put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
+  </definition>
+  
+    <definition name="welcome" extends="common">
+    <put-attribute name="title" value="Customers page" />
+    <put-attribute name="body" value="/WEB-INF/jsp/welcome.jsp" />
   </definition>
   
 </tiles-definitions>

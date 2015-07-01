@@ -1,6 +1,5 @@
 package com.ua.entity;
 
-
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -9,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity 
+@Entity
 public class user implements Serializable {
 
 	/**
@@ -17,18 +16,26 @@ public class user implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id")
 	private int id;
-	@Column(name="name")
+	@Column(name = "name")
 	private String name;
-	@Column(name="email")
+	@Column(name = "email")
 	private String email;
-	@Column(name="phone")
+	@Column(name = "phone")
 	private String phone;
+	@Column(name = "password")
+	private String password;
 
-	
-	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -60,7 +67,5 @@ public class user implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	 
-	
+
 }
