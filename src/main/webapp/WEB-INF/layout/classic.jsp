@@ -50,6 +50,8 @@
 						<li class="active"><a href='<spring:url value="/home"></spring:url>'>Home</a></li>
 						<li><a href='<spring:url value="/about"></spring:url>'>About</a></li>
 						<li><a href='<spring:url value="/contact"></spring:url>'>Contact</a></li>
+						<li><a href='<spring:url value="/customers"></spring:url>'>Customers</a></li>
+						<li><a href='<spring:url value="/pages"></spring:url>'>CustomersPage</a></li>
 					</ul>
 
 				</div>
