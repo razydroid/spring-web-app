@@ -7,6 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class user implements Serializable {
@@ -20,12 +24,20 @@ public class user implements Serializable {
 	@Column(name = "id")
 	private int id;
 	@Column(name = "name")
+	@Size(min = 3, max = 30) 
+	@NotEmpty
 	private String name;
-	@Column(name = "email")
+	@Column(name = "email") 
+	//@NotEmpty
+	//@Email
 	private String email;
-	@Column(name = "phone")
+	@Column(name = "phone") 
+	
 	private String phone;
+	
 	@Column(name = "password")
+	@Size(min = 3, max = 30) 
+	@NotEmpty
 	private String password;
 
 	public String getPassword() {

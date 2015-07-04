@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ua.beans.UserBean;
 import com.ua.entity.user;
 import com.ua.service.LoginService;
 
@@ -31,13 +32,14 @@ public class LoginController
 		//return "login";
 	}
 	@RequestMapping(value="/login",method=RequestMethod.POST)
-	public ModelAndView executeLogin(HttpServletRequest request, HttpServletResponse response)
+	public ModelAndView executeLogin(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("user")user userBean)
 	{
 		ModelAndView model= null;
 		
-		String userName = request.getParameter("userName");
+		String userName = request.getParameter("name");
 		String password = request.getParameter("password");
-		System.out.println("userName="+userName+" password="+password);
+		System.out.println("userName="+userName+" password="+password+ "uname from bean"+userBean.getName()+"PWD"+userBean.getPassword());
+		
 		try
 		{
 			user validUser = loginService.isValidUser(userName, password);

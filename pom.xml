@@ -9,6 +9,8 @@
 	<properties>
 		<org.springframework.version>4.1.6.RELEASE</org.springframework.version>
 		<apache.tiles.version> 3.0.5</apache.tiles.version>
+		<hibernate.validator.version>5.1.2.Final</hibernate.validator.version>
+		<javax.validation.version>1.1.0.Final</javax.validation.version>
 	</properties>
 	<dependencies>
 
@@ -126,8 +128,20 @@
 			<artifactId>spring-data-jpa</artifactId>
 			<version>1.8.0.RELEASE</version>
 		</dependency>
-		
-				<!-- Mysql DB connector -->
+
+		<!-- jsr303 validation dependencies -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>${javax.validation.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate.validator.version}</version>
+		</dependency>
+
+		<!-- Mysql DB connector -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -138,7 +152,9 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.2.2</version>
 		</dependency>
-		
+
+
+
 	</dependencies>
 	<build>
 		<finalName>java-web-application</finalName>

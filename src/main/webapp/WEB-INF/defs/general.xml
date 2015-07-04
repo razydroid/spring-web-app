@@ -48,4 +48,21 @@
     <put-attribute name="body" value="/WEB-INF/jsp/welcome.jsp" />
   </definition>
   
+    <definition name="enroll" extends="signon">
+    <put-attribute name="title" value="Customers page" />
+    <put-attribute name="body" value="/WEB-INF/jsp/enroll.jsp" />
+  </definition>
+  
+    <definition name="success" extends="signon">
+    <put-attribute name="title" value="Customers page" />
+    <put-attribute name="body" value="/WEB-INF/jsp/success.jsp" />
+  </definition>
+  
+  
+    <definition name="signin" extends="signon">
+    <put-attribute name="title" value="Customers Signin Page" />
+    <put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+    <put-attribute name="body" value="/WEB-INF/jsp/signin.jsp" />
+  </definition>
+  
 </tiles-definitions>
