@@ -9,8 +9,16 @@
 <link href="<c:url value='/resources/css/custom.css' />"
 	rel="stylesheet"></link>
 
+<div class="container">
 
-<div class="form-container">
+	<header>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>User Admin</h1>
+			</div> 
+		</div> 
+	</header>
+	
 
 	<h1>Sign In Form</h1>
 	<form:form method="post" class="form-horizontal" action='/signin'
@@ -23,7 +31,7 @@
 		</div>
 
 		<div class="row">
-			<div class="form-group col-md-12">
+			<div class="form-group col-sm-6">
 				<label class="col-md-3 control-lable" for="name">User Name</label>
 				<div class="col-md-7">
 					<form:input type="text" path="name" id="name"
@@ -35,7 +43,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="form-group col-md-12">
+			<div class="form-group col-sm-6">
 				<label class="col-md-3 control-lable" for="password">Password</label>
 				<div class="col-md-7">
 					<form:input type="password" path="password" id="password"

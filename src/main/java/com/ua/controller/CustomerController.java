@@ -1,5 +1,7 @@
 package com.ua.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -22,6 +24,25 @@ public class CustomerController {
 	{
 		model.addAttribute("customers",customerService.getAllCustomer());
 		
+		List<String> allEmail  = customerService.findAllEmailAddress();
+		
+		allEmail.size();
+		
+		for(String emails : allEmail)
+		{
+			System.out.println("email address ="+emails);
+		}
+		
+		/*
+		for(int i=0;i<allEmail.size();i++)
+		{
+			System.out.println("email address = "+allEmail.get(i));
+		}*/
+		
+		
+		
+		
+		System.out.println("SIZE = "+allEmail.size());
 		return "customers";
 	}
 	

@@ -1,6 +1,7 @@
 package com.ua.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.domain.Page;
 
@@ -13,4 +14,6 @@ public interface CustomerService {
 	public ArrayList<Customer> getAllCustomer();
 
 	public Page<Customer> getAllCustomerPerPage(Integer pageNumber);
+	
+	public List<String> findAllEmailAddress();
 }

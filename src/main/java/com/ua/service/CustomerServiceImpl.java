@@ -1,6 +1,7 @@
 package com.ua.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -39,6 +40,13 @@ public class CustomerServiceImpl implements CustomerService {
 	public Page<Customer> getAllCustomerPerPage(Integer pageNumber) {
 		PageRequest request = new PageRequest(pageNumber - 1, PAGE_SIZE);
 		return customerRep.findAll(request);
+	}
+
+	@Override
+	public List<String> findAllEmailAddress() {
+		// TODO Auto-generated method stub
+		return customerRep.findAllEmailAddress();
+		
 	}
 
 }
