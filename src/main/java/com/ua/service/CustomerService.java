@@ -13,7 +13,7 @@ public interface CustomerService {
 
 	public List<Customer> getAllCustomer();
 
-	public Page<Customer> getAllCustomerPerPage();
+	public Page<Customer> getAllCustomerPerPage(int page,int size);
 	
 	public List<String> findAllEmailAddress();
 }

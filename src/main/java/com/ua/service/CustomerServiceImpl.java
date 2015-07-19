@@ -50,9 +50,9 @@ public class CustomerServiceImpl implements CustomerService {
 		
 	}
 	
-	public Page<Customer> getAllCustomerPerPage() {
+	public Page<Customer> getAllCustomerPerPage(int page,int size) {
 		
-		return customerRep.findAll(new PageRequest(0, 10, Direction.ASC, "firstName"));
+		return customerRep.findAll(new PageRequest(page, size, Direction.ASC, "firstName"));
 	}
 
 }
