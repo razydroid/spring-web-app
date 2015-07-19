@@ -22,23 +22,25 @@ public class CustomerController {
 	@RequestMapping("/customers")
 	public String getAllCustomer( Model model)
 	{
-		model.addAttribute("customers",customerService.getAllCustomer());
+		//model.addAttribute("customers",customerService.getAllCustomer());
 		
 		List<String> allEmail  = customerService.findAllEmailAddress();
 		
-		allEmail.size();
+		Page<Customer> allCustomers = customerService.getAllCustomerPerPage();
 		
-		for(String emails : allEmail)
-		{
-			System.out.println("email address ="+emails);
-		}
+		List<Customer> customers = allCustomers.getContent();
+		
+		System.out.println("allCustomers sizes ="+allCustomers.getSize()+"No of elements"+allCustomers.getNumberOfElements()+"totalPAges= "+allCustomers.getTotalPages());
+		
+		model.addAttribute("customers",allCustomers);
+			
+		
 		
 		/*
 		for(int i=0;i<allEmail.size();i++)
 		{
 			System.out.println("email address = "+allEmail.get(i));
 		}*/
-		
 		
 		
 		
@@ -49,7 +51,7 @@ public class CustomerController {
 	
 	@RequestMapping(value = "/pages/{pageNumber}", method = RequestMethod.GET)
 	public String getAllCustomerPerPage(@PathVariable Integer pageNumber, Model model) {
-	    Page<Customer> page = customerService.getAllCustomerPerPage(pageNumber);
+	    Page<Customer> page = customerService.getAllCustomerPerPage();
 
 	    System.out.println("SIZE IS "+page.getSize());
 	    

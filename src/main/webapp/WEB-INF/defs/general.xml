@@ -32,6 +32,11 @@
     <put-attribute name="body" value="/WEB-INF/jsp/customers.jsp" />
   </definition>
   
+    <definition name="customerDetails" extends="common">
+    <put-attribute name="title" value="Customer Details" />
+    <put-attribute name="body" value="/WEB-INF/jsp/customerDetails.jsp" />
+  </definition>
+  
   <definition name="customersPage" extends="common">
     <put-attribute name="title" value="Customers page" />
     <put-attribute name="body" value="/WEB-INF/jsp/customersPage.jsp" />

@@ -11,9 +11,9 @@ public interface CustomerService {
 
 	public void createCustomer(Customer customer);
 
-	public ArrayList<Customer> getAllCustomer();
+	public List<Customer> getAllCustomer();
 
-	public Page<Customer> getAllCustomerPerPage(Integer pageNumber);
+	public Page<Customer> getAllCustomerPerPage();
 	
 	public List<String> findAllEmailAddress();
 }

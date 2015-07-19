@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.ua.entity.Customer;
@@ -28,25 +29,30 @@ public class CustomerServiceImpl implements CustomerService {
 
 	}
 
-	public ArrayList<Customer> getAllCustomer() {
+	public List<Customer> getAllCustomer() {
 
-		ArrayList customers = new ArrayList<Customer>();
-		customers = (ArrayList) customerRep.findAll();
+		
+		List<Customer> customers = customerRep.findAll();
 		return customers;
 	}
 
 	private static final int PAGE_SIZE = 50;
 
-	public Page<Customer> getAllCustomerPerPage(Integer pageNumber) {
+	/*public Page<Customer> getAllCustomerPerPage(Integer pageNumber) {
 		PageRequest request = new PageRequest(pageNumber - 1, PAGE_SIZE);
 		return customerRep.findAll(request);
-	}
+	}*/
 
 	@Override
 	public List<String> findAllEmailAddress() {
 		// TODO Auto-generated method stub
 		return customerRep.findAllEmailAddress();
 		
+	}
+	
+	public Page<Customer> getAllCustomerPerPage() {
+		
+		return customerRep.findAll(new PageRequest(0, 10, Direction.ASC, "firstName"));
 	}
 
 }

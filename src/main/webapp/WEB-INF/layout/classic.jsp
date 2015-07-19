@@ -61,9 +61,9 @@
 			<!--/.container-fluid -->
 		</nav>
 
-
+		
 		<tiles:insertAttribute name="body"></tiles:insertAttribute>
-
+		
 		<br> <br>
 		<center>
 			<tiles:insertAttribute name="footer"></tiles:insertAttribute>
